@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Biodata Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Student Biodata Form</h2>
+        <p>Please fill in your details below.</p>
+
+        <form id="biodataForm">
+
+            <label for="surname">SurName</label>
+            <input type="text" id="surname" name="surname" placeholder="Enter your surname" required>
+
+            <label for="firstname"> FirstName</label>
+            <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
+
+            <label for="middlename"> MiddleName</label>
+            <input type="text" id="middlename" placeholder="Enter your middle name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email"  id="email" name="email" placeholder="john@email.com"  required>
+
+            <label for="matric">Matric Number</label>
+            <input type="text" id="matric" name="matric" placeholder="Enter your matric number" required>
+
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date"  id="dob"  name="dob" required >
+
+            <label for="department">Department</label>
+            <input type="text" id="department" name="department"  placeholder="Enter your department" required >
+
+            <label for="level">Level</label>
+            <select id="level" name="level" required>
+                <option value="">Select level</option>
+                <option value="100">100 Level</option>
+                <option value="200">200 Level</option>
+                <option value="300">300 Level</option>
+                <option value="400">400 Level</option>
+                <option value="500">500 Level</option>
+            </select>
+
+            <button type="submit">Submit Biodata</button>
+
+            <div id="message" role="status" aria-live="polite"></div>
+
+        </form>
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
