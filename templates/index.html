@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Biodata Form & Database System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="tab-btn active" id="biodataTabBtn">Biodata Form</button>
+            <button class="tab-btn" id="databaseTabBtn">Database Viewer</button>
+        </div>
+
+        <!-- Section 1: Form -->
+        <div id="biodataSection" class="section active">
+            <h2>Student Biodata Form</h2>
+            <p>Please fill in your details below.</p>
+
+            <form id="biodataForm">
+                <label for="surname">Surname <span class="required">*</span></label>
+                <input type="text" id="surname" required>
+
+                <label for="firstname">First Name <span class="required">*</span></label>
+                <input type="text" id="firstname" required>
+
+                <label for="middlename">Middle Name <span class="required">*</span></label>
+                <input type="text" id="middlename" required>
+
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" required>
+
+                <label for="matric">Matric Number <span class="required">*</span></label>
+                <input type="text" id="matric" required>
+
+                <label for="gender">Gender <span class="required">*</span></label>
+                <select id="gender" required>
+                    <option value="">Select gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+
+                <label for="dob">Date of Birth <span class="required">*</span></label>
+                <input type="date" id="dob" required>
+
+                <label for="department">Department <span class="required">*</span></label>
+                <input type="text" id="department" required>
+
+                <label for="level">Level <span class="required">*</span></label>
+                <select id="level" required>
+                    <option value="">Select level</option>
+                    <option value="100">100 Level</option>
+                    <option value="200">200 Level</option>
+                    <option value="300">300 Level</option>
+                    <option value="400">400 Level</option>
+                    <option value="500">500 Level</option>
+                </select>
+
+                <button type="submit">Submit Biodata</button>
+                <div id="message" role="status" aria-live="polite"></div>
+            </form>
+        </div>
+
+        <!-- Section 2: Database Records Viewer -->
+        <div id="databaseSection" class="section">
+            <h2>Database Management System</h2>
+            <p>Relational SQLite Tables (`database.db`)</p>
+
+            <div class="db-card">
+                <h3>Table 1: Login Table (login_info)</h3>
+                <div class="table-wrapper">
+                    <table id="loginTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Username</th>
+                                <th>Password</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="db-card">
+                <h3>Table 2: Biodata Table (biodata_info)</h3>
+                <div class="table-wrapper">
+                    <table id="biodataTable">
+                        <thead>
+                            <tr>
+                                <th>Matric</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Gender</th>
+                                <th>DOB</th>
+                                <th>Dept</th>
+                                <th>Level</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>
